@@ -1,3 +1,3 @@
 <?php
 
-printf("the initial setup");
+require __DIR__ . '../vendor/autoload.php';
