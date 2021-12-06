@@ -12,6 +12,6 @@ $resolver->setRoutes($routes);
 
 $route = $_SERVER['REQUEST_URI'];
 
-$output = (new Router($resolver, $route))->resolve();
+$output = (new Router($resolver, $route))->resolve($route);
 
 print json_encode($output);

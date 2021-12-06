@@ -20,7 +20,7 @@ class RouteResolver implements ResolveRouteInterface
         }
     }
 
-    protected function getController($route)
+    protected function getController(string $route)
     {
         return $this->routes[$route];
     }
@@ -29,5 +29,10 @@ class RouteResolver implements ResolveRouteInterface
     {
         [$class, $function] = $element;
         return (new $class())->$function();
+    }
+
+    public function routeExists(string $route): bool
+    {
+        return array_key_exists($route, $this->routes);
     }
 }

@@ -13,14 +13,15 @@ class Router
 
     protected ResolveRouteInterface $resolver;
 
-    public function __construct(ResolveRouteInterface $resolver, string $route)
+    public function __construct(ResolveRouteInterface $resolver)
     {
         $this->resolver = $resolver;
-        $this->route = $route;
     }
 
-    public function resolve()
+    public function resolve(string $route)
     {
-        return $this->resolver->resolve($this->route);
+        if ($this->resolver->routeExists($route)) {
+            return $this->resolver->resolve($route);
+        }
     }
 }
