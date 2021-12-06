@@ -6,5 +6,8 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    //
+    public function get()
+    {
+        return 'Hello World!';
+    }
 }
